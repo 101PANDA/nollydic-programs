@@ -2,49 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nollydic Film House Log book Owerri</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Nollydic Film House Log book Owerri</h1>
-    <div class="form">
-      <form action="/home/pcode/Documents/Nollydic_projects/finfile.txt" method="post">
-            <div>
-              <!--<label>Date</label>
-                <input type="datetime-local" placeholder="dd/mm/yyyy">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter your full name">-->
+    <div class="wrapper">
+      <div class="title">
+        Nollydic Film House
+        Log book
+      </div>
+      <div class="form" action="/home/pcode/Documents/Nollydic_projects/finfile.txt" method="post">
+        <div class="input_field">
+          <label>Full name</label>
+          <input type="text" placeholder="Enter your full name" class="input">
+        </div>
+        <div class="input_field">
+              <label>Date</label>
+                <input type="datetime-local" placeholder="dd/mm/yyyy" class="input">
             </div>
-              <p>
-                <label>Role</label>
-                <div>
-                  <input type="radio" name="position" value="staff">
+            <p>
+                  <div class="input_field">
+                    <label>Role</label>
+                  </div>
+                <div class="input_field">
+                  <div class="radio">
+                    <input type="radio" name="position" value="staff" class="input">
+                  </div>
                   <label>staff</label>
-                  <input type="radio" name="position" value="Visitor">
+                  <div class="radio">
+                    <input type="radio" name="position" value="Visitor" class="input">
+                  </div>
                   <label>visitor</label>
                 </div>
-              </p>
-              <div>
+              <div class="input_field">
                 <label>If staff select department</label>
-                <select name="department" id="department">
-                  <option value="Tech tea">Tech team</option>
-                  <option value="Tech team">Tech team</option>
-                  <option value="Tech team">Tech team</option>
-                  <option value="Tech team">Tech team</option>
-                </select>
+                <div class="custom_select">
+                  <select name="department" id="department">
+                    <option aria-placeholder="department">none</option>
+                    <option value="Tech tea">Tech team</option>
+                    <option value="Tech team">Tech team</option>
+                    <option value="Tech team">Tech team</option>
+                    <option value="Tech team">Tech team</option>
+                  </select>
+                </div>
               </div>
-              <div>
-                <label>Phone number</label>
-                <input type="tel" value="phone">
+            </p>
+              <div class="input_field">
+                  <label>Phone number</label>
+                  <input type="tel" placeholder="+234-----------" class="input">
               </div>
-              <div>
-                <button>
-                  Sign up
-                </button>
-              </div>
-              <div>
-                <button>
-                  Sign up
-                </button>
+              <div class="input_field">
+                  <input type="submit" value="Log it" class="btn">
               </div>
       </form>
     </div>
