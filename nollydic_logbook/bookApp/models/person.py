@@ -3,6 +3,7 @@
 """
 from uuid import uuid4
 import models
+from datetime import datetime
 
 
 class Person:
@@ -20,9 +21,9 @@ class Person:
             self.id = str(uuid4())
             models.storage.add(self)
 
-
     def to_dict(self):
         attrs = self.__dict__.copy()
+        attrs["datetime"] = datetime.isoformat(attrs["datetime"])
         return attrs
 
     def update(self, **kwargs):
@@ -31,7 +32,7 @@ class Person:
         if "name" in kwargs:
             self.__dict__.update("name", kwargs["name"])
         if "datetime" in kwargs:
-            self.__dict__.update("datetime", kwargs["datetime"])
+            self.__dict__.update("datetime", datetime.fromisoformat(kwargs["datetime"]))
         if "role" in kwargs:
             self.__dict__.update("role", kwargs["role"])
         if "department" in kwargs:
