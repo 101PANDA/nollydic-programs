@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Yeseva+One&display=swap');
 
 * {
     padding: 0;
@@ -36,6 +36,16 @@ header{
     margin-top: 8px;
 }
 
+.logo .logoname{
+    float: right;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0000FF;
+    /*text-transform: uppercase;
+    text-align: center;*/
+}
+
 nav .logo{
     display: none;
 }
@@ -44,23 +54,26 @@ nav ul{
     display: flex;
 }
 
-nav ul li a{
-    color: #212526;
+nav ul li button{
+    background: blue;
+    color: white;
     display: block;
     margin: 0 2px;
     font-weight: 600;
     padding: 8px 18px;
     transition: 0.2s;
     border-radius: 30px;
+    border:none;
+    cursor: pointer;
 }
 
-nav ul li a:hover{
-    background: #f6f4ff;
+
+nav ul li button:hover{
+    background-color: lightblue;
 }
 
-nav ul li a.active{
-    background: blue;
-    color: #fff;
+nav ul li button:active{
+    background-color: darkblue;
 }
 
 .hamburger{
@@ -80,6 +93,41 @@ nav ul li a.active{
     height: 2px;
     margin: 6px 0;
     background: #212526;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+}
+table thead tr{
+    background-color: blue;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type{
+    border-bottom: 2px solid blue;
 }
 
 @media only screen and (max-width: 1100px){
@@ -110,7 +158,7 @@ nav ul li a.active{
         align-items: center;
         margin-left: 30px;
     }
-    nav ul li a{
+    nav ul li button{
         margin-bottom: 5px;
         padding: 10px 15px;
         border-radius: 5px;
