@@ -28,16 +28,16 @@ class Person:
 
     def update(self, **kwargs):
         if "id" in kwargs:
-            self.__dict__.update('id', kwargs["id"])
+            self.__dict__.update({'id': kwargs["id"]})
         if "name" in kwargs:
-            self.__dict__.update("name", kwargs["name"])
+            self.__dict__.update({"name": kwargs["name"]})
         if "datetime" in kwargs:
-            self.__dict__.update("datetime", datetime.fromisoformat(kwargs["datetime"]))
+            self.__dict__.update({"datetime": datetime.fromisoformat(kwargs["datetime"])})
         if "role" in kwargs:
-            self.__dict__.update("role", kwargs["role"])
+            self.__dict__.update({"role": kwargs["role"]})
         if "department" in kwargs:
-            self.__dict__.update("department", kwargs["department"])
+            self.__dict__.update({"department": kwargs["department"]})
         if "phone" in kwargs:
-            self.__dict__.update("phone", kwargs["phone"])
+            self.__dict__.update({"phone": kwargs["phone"]})
 
         models.storage.save()

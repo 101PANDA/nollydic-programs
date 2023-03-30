@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, request
 from models.person import Person
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -10,15 +11,15 @@ def home():
         form = request.form
 
         name = form.get("fullName")
-        datetime = form.get("date")
+        date = datetime.now().isoformat()
         role = form.get("position")
         department = form.get("department")
         phone = form.get("telNo")
 
         person = Person()
-        person.update(name=name, datetime=datetime, role=role, department=department, phone=phone)
+        person.update(name=name, datetime=date, role=role, department=department, phone=phone)
 
-        return "{} {} - {} {} -- {}".format(name, datetime, role, department, phone)
+        return f"{name} {date} - {role} {department} -- {phone}"
     return render_template("mainform.html")
 
 if __name__ == "__main__":

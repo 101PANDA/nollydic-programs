@@ -20,7 +20,6 @@ class FileStorage:
 
     def save(self):
         json_data = {}
-        self.load()
 
         for key, value in self.__objects.items():
             value = value.to_dict()
