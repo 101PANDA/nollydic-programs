@@ -6,6 +6,7 @@
     <title>Nollydic Film House Log book Owerri</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
   </head>
+
   <body>
     <div class="wrapper">
       <div class="logo">
@@ -16,6 +17,7 @@
         Nollydic Film House
         Log book
       </div>
+
       <form class="form" action="/" method="post">
         <div class="input_field">
           <label>Full name</label>
@@ -29,49 +31,53 @@
                   <div class="input_field">
                     <label>Role</label>
                   </div>
+
                 <div class="input_field">
                   <div class="radio">
-                    <input type="radio" name="position" value="Staff" class="input">
+                    <input type="radio" name="position" value="Staff" class="input" onclick="document.getElementById('staff_department').removeAttribute('hidden')">
                   </div>
                   <label>staff</label>
                   <div class="radio">
-                    <input type="radio" name="position" value="Visitor" class="input">
+                    <input type="radio" name="position" value="Visitor" class="input" onclick="document.getElementById('visitor_reason').removeAttribute('hidden')">
                   </div>
                   <label>visitor</label>
                 </div>
+
               <div class="input_field">
-                <label>If staff select department</label>
-                <div class="custom_select">
-                  <select name="department" id="department">
-                    <option aria-placeholder="department">....</option>
+                <div class="custom_select" id="staff_department" hidden>
+
+                  <select name="department" id="department" required>
+                    <option value="" disabled selected hidden>Select department</option>
                     <option value="Administrative">Administrative</option>
                     <option value="Film Production">Film Production</option>
-                    <option value="Nollydic Make Over">Nollydic Makeover</option>
-                    <option value="Music Studio">Music Studio</option>
-                    <option value="Post Production">Post Production</option>
-                    <option value="Tech Team">Tech Team</option>
-                    <option value="Syndicate Style Models">Syndicate Style Models</option>
-                    <option value="Script Writing">Script Writing</option>
                     <option value="Media/Photography">Media/Photography</option>
+                    <option value="Music Studio">Music Studio</option>
+                    <option value="Nollydic Make Over">Nollydic Makeover</option>
+                    <option value="Post Production">Post Production</option>
+                    <option value="Script Writing">Script Writing</option>
+                    <option value="Syndicate Style Models">Syndicate Style Models</option>
+                    <option value="Tech Team">Tech Team</option>
                   </select>
                 </div>
+
               </div>
               <div class="input_field">
-                <label>If visitor select reason for visit</label>
-                <div class="custom_select">
-                  <select name="reason" id="reason">
-                    <option aria-placeholder="reason">....</option>
-                    <option value="Meeting with the CEO">Meeting with the CEO</option>
-                    <option value="MakeOver section">MakeOver section</option>
-                    <option value="Photography section">Photography section</option>
-                    <option value="Music recording">Music recording</option>
-                    <option value="Job Application">Job application</option>
-                    <option value="Information Finding">Information finding</option>
-                    <option value="Purchase Goods and Services">Purchase goods and services</option>
+                <div class="custom_select" id="visitor_reason" hidden>
+                  <select name="reason" id="reason" required>
+                    <option value="" disabled selected hidden>Select reason for visit</option>
                     <option value="Contract Drafting">Contract draffting</option>
+                    <option value="Information Finding">Information finding</option>
+                    <option value="Job Application">Job application</option>
+                    <option value="MakeOver section">MakeOver section</option>
+                    <option value="Meeting with the CEO">Meeting with the CEO</option>
+                    <option value="Music recording">Music recording</option>
+                    <option value="Photography section">Photography section</option>
+
+                    <option value="Purchase Goods and Services">Purchase goods and services</option>
                   </select>
                 </div>
               </div>
+
             </p>
               <div class="input_field">
                   <label>Phone number</label>
@@ -82,5 +88,6 @@
               </div>
       </form>
     </div>
+
   </body>
 </html>
