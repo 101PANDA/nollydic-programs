@@ -9,12 +9,12 @@ def home():
         form = request.form
 
         name = form.get("fullName")
-        date = form.get("date")
+        datetime = form.get("date")
         role = form.get("position")
         department = form.get("department")
         phone = form.get("telNo")
 
-        return "{} {} - {} {} -- {}".format(name, date, role, department, phone)
+        return "{} {} - {} {} -- {}".format(name, datetime, role, department, phone)
     return render_template("mainform.html")
 
 if __name__ == "__main__":
