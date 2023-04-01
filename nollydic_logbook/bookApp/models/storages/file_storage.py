@@ -39,4 +39,4 @@ class FileStorage:
         else:
             for key, value in json_data.items():
                 value = Person(**value)
-                self.__objects.update(key, value)
+                self.__objects.update({key: value})
