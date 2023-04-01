@@ -2,6 +2,7 @@
 
 """
 import json
+from datetime import datetime
 from ..person import Person
 
 class FileStorage:
@@ -40,3 +41,17 @@ class FileStorage:
             for key, value in json_data.items():
                 value = Person(**value)
                 self.__objects.update({key: value})
+
+    def all(self):
+        objs = []
+        for obj in self.__objects.values():
+            objs.append(obj)
+        return objs
+
+    def today(self):
+        objs = []
+        for obj in self.__objects.values():
+            tday = datetime.today()
+            if obj.datetime.date() == tday.date():
+                objs.append(obj)
+        return objs
