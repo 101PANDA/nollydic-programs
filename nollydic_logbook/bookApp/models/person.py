@@ -11,7 +11,7 @@ class Person:
     name = ""
     datetime = None
     role = ""
-    department = ""
+    role_info = ""
     phone = ""
 
     def __init__(self, **kwargs):
@@ -36,7 +36,7 @@ class Person:
         if "role" in kwargs:
             self.__dict__.update({"role": kwargs["role"]})
         if "department" in kwargs:
-            self.__dict__.update({"department": kwargs["department"]})
+            self.__dict__.update({"role_info": kwargs["role_info"]})
         if "phone" in kwargs:
             self.__dict__.update({"phone": kwargs["phone"]})
 
