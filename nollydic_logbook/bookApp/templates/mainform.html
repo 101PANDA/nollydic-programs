@@ -36,17 +36,17 @@
 
                 <div class="input_field">
                   <div class="radio">
-                    <input type="radio" name="position" value="Staff" class="input" onclick="document.getElementById('staff_department').removeAttribute('hidden')">
+                    <input type="radio" name="position" value="Staff" checked class="input" onclick="$('.custom_select').toggle()">
                   </div>
                   <label>staff</label>
                   <div class="radio">
-                    <input type="radio" name="position" value="Visitor" class="input" onclick="document.getElementById('visitor_reason').removeAttribute('hidden')">
+                    <input type="radio" name="position" value="Visitor" class="input" onclick="$('.custom_select').toggle()">
                   </div>
                   <label>visitor</label>
                 </div>
 
               <div class="input_field">
-                <div class="custom_select" id="staff_department" hidden>
+                <div class="custom_select" id="staff_department">
 
                   <select name="department" id="department" required>
                     <option value="" disabled selected hidden>Select department</option>
