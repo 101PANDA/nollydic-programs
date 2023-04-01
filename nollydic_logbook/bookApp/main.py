@@ -20,7 +20,7 @@ def home():
         phone = form.get("telNo")
 
         person = Person()
-        person.update(name=name, datetime=date, role=role, department=department, phone=phone)
+        person.update(name=name, datetime=date, role=role, department=role_info, phone=phone)
     return render_template("mainform.html")
 
 if __name__ == "__main__":
