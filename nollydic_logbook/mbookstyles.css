@@ -102,6 +102,7 @@ nav ul li button:active{
 }
 
 table{
+    background: #ffffffaf;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
