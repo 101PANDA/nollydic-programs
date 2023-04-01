@@ -18,8 +18,6 @@ def home():
 
         person = Person()
         person.update(name=name, datetime=date, role=role, department=department, phone=phone)
-
-        return f"{name} {date} - {role} {department} -- {phone}"
     return render_template("mainform.html")
 
 if __name__ == "__main__":
