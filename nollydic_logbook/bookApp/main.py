@@ -13,7 +13,10 @@ def home():
         name = form.get("fullName")
         date = datetime.now().isoformat()
         role = form.get("position")
-        department = form.get("department")
+        if role == "Staff":
+            role_info = form.get("department")
+        elif role == "Visitor":
+            role_info = form.get("reason")
         phone = form.get("telNo")
 
         person = Person()

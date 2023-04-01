@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Yeseva+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+img{
+    width: 50px;
+    height: 55px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 225, 255, 0.589), rgba(0, 225, 255, 0.589)), url(nollidicface.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+header{
+    width: 80%;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 120px;
+    margin-top: 8px;
+}
+
+.logo .logoname{
+    float: right;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0000FF;
+    /*text-transform: uppercase;
+    text-align: center;*/
+}
+
+nav .logo{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li button{
+    background: blue;
+    color: white;
+    display: block;
+    margin: 0 2px;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: 0.2s;
+    border-radius: 30px;
+    border:none;
+    cursor: pointer;
+}
+
+
+nav ul li button:hover{
+    background-color: lightblue;
+}
+
+nav ul li button:active{
+    background-color: darkblue;
+}
+
+.hamburger{
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.hamburger:hover{
+    background: #f6f4ff;
+}
+
+.hamburger div{
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #212526;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 600px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+}
+table thead tr{
+    background-color: blue;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type{
+    border-bottom: 2px solid blue;
+}
+
+@media only screen and (max-width: 1100px){
+    header{
+        width: 70%;
+        padding: 0 20px;
+    }
+    nav{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 280px;
+        height:100vh;
+        background-color: #fefefe;
+        transition: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    #nav_check:checked ~ nav{
+        left: 0;
+    }
+
+    nav .logo{
+        display: block;
+        height: 70px;
+        display:flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+    nav ul li button{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav ul{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .hamburger{
+        display: block;
+    }
+}
