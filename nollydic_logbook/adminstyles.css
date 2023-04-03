@@ -85,23 +85,25 @@
     justify-content: space-between;
 }
 
-.btn_field button{
+button{
     flex-basis: 48%;
-    background: #0000ff;
-    color: #fff;
+    color: rgb(255, 255, 255);
     height: 40px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
+    width: 90px;
     cursor: pointer;
-    transition: background 1ms;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/*    transform: translate(-50%, -50%);*/
+    background: #0000ff;
+    border-radius: 20px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    outline: 0px;
+    transition: background 1ms ease 0s;
 }
 
-.btn_field button:hover{
+button:hover{
     background: skyblue;
 }
 
