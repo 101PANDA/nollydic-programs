@@ -8,7 +8,9 @@ from ..person import Person
 class FileStorage:
 
     __objects = {}
-    __filepath = "nollybook.json"
+    __filepath = datetime.now()
+    __filepath = str(__filepath.date())
+    __filepath = __filepath + ".json"
 
     def add(self, obj):
         key = f"{obj.__class__.__name__}.{obj.id}"
