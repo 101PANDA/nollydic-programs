@@ -19,7 +19,7 @@
         Log book
       </div>
 
-      <form class="form" action="/" method="post">
+      <form class="form" action="{{ url_for('home')}}" method="post">
         <div class="input_field">
           <label>Full name</label>
           <input type="text" name="fullName" placeholder="Enter your full name" class="input">
@@ -48,7 +48,7 @@
               <div class="input_field">
                 <div class="custom_select" id="staff_department">
 
-                  <select name="department" id="department" required>
+                  <select name="department" id="department">
                     <option value="" disabled selected hidden>Select department</option>
                     <option value="Administrative">Administrative</option>
                     <option value="Film Production">Film Production</option>
@@ -65,7 +65,7 @@
               </div>
               <div class="input_field">
                 <div class="custom_select" id="visitor_reason" hidden>
-                  <select name="reason" id="reason" required>
+                  <select name="reason" id="reason">
                     <option value="" disabled selected hidden>Select reason for visit</option>
                     <option value="Contract Drafting">Contract draffting</option>
                     <option value="Information Finding">Information finding</option>
@@ -74,7 +74,6 @@
                     <option value="Meeting with the CEO">Meeting with the CEO</option>
                     <option value="Music recording">Music recording</option>
                     <option value="Photography section">Photography section</option>
-
                     <option value="Purchase Goods and Services">Purchase goods and services</option>
                   </select>
                 </div>
