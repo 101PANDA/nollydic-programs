@@ -10,7 +10,7 @@
 
   <body>
     <div class="wrapper">
-      <a href="/adminpage.html">
+      <a href="{{ url_for('admin', filename='templates/adminpage.html')}}">
         <div class="image">
           <img src="{{ url_for('static', filename='images/Nollydic_logo.jpeg') }}" alt="company logo">
         </div>
