@@ -12,12 +12,14 @@ body{
     height: 100vh;
     background-image: linear-gradient(rgba(0, 225, 255, 0.589), rgba(0, 225, 255, 0.589)), url(../images/nollidicface.jpg);
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     position: relative;
     padding: 0 10px;
 }
 
 .wrapper{
+    border-radius: 2%;
     max-width: 500px;
     width: 100%;
     background: #fff;
@@ -109,15 +111,21 @@ body{
 }
 
 .wrapper .form .input_field .btn{
-    width: 80%;
-    padding: 8px 10px;
-    font-size: 15px;
-    border: 0;
-    background: #0000FF;
+    flex-basis: 60%;
+    background: #0000ff;
     color: #fff;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
     cursor: pointer;
-    border-radius: 3px;
-    outline: none;
+    transition: background 1ms;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 15px;
 }
 
 .wrapper .form .input_field:last-child{
