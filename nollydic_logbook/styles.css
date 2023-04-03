@@ -12,7 +12,8 @@ body{
     height: 100vh;
     background-image: linear-gradient(rgba(0, 225, 255, 0.589), rgba(0, 225, 255, 0.589)), url(nollidicface.jpg);
     background-size: cover;
-    background-position: 0vmax;
+    background-attachment: fixed;
+    background-position: center center;
     position: relative;
 }
 
