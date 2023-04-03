@@ -10,17 +10,20 @@
 <div class="container">
     <div class="form_box">
         <h1>Admin login</h1>
-        <form>
+        <form method="Post" action="/admin">
             <div class="input_group">
                 <div class="input_field">
                     <label>Username</label>
-                    <input type="text" placeholder="Username">
+                    <input type="text" name="username" placeholder="Username">
                 </div>
 
                 <div class="input_field">
                     <label>Password</label>
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                 </div>
+                {% if error %}
+                <p class="error">{{ error }}</p>
+                {% endif %}
             </div>
             <a href="mbook_sheet.html">
                 <button type="button">Login</button>
