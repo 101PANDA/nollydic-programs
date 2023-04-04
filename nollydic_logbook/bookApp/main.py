@@ -37,15 +37,17 @@ def admin():
             visitor.append(person)
     return render_template("mbook_sheet.html", staffs=staff, visitors=visitor)
 
-@app.route("/admin")
+@app.route("/auth", methods=["GET", "POST"])
 def auth():
     username = "ADMIN"
     password = "NOLLYDICadmin..."
-    if username == request.form['username'] and password == request.form["password"]:
-        return render_template("mbook_sheet.html")
-    else:
-        error = "Invalid username or password"
-        return render_template("adminpage.html", error=error)
+    error = ""
+    if request.method == "POST":
+        if username == request.form['username'] and password == request.form["password"]:
+            return redirect(url_for("admin"))
+        else:
+            error = "Invalid username or password"
+    return render_template("adminpage.html", error=error)
 
 if __name__ == "__main__":
     app.run("0.0.0.0", "5000")

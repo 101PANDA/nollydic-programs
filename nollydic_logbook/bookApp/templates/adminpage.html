@@ -10,7 +10,7 @@
 <div class="container">
     <div class="form_box">
         <h1>Admin login</h1>
-        <form method="post" action="/admin">
+        <form method="post" action="/auth" id="ad-form">
             <div class="input_group">
                 <div class="input_field">
                     <label>Username</label>
@@ -25,9 +25,7 @@
                 <p class="error">{{ error }}</p>
                 {% endif %}
             </div>
-            <a href="mbook_sheet.html">
-                <button type="button" value="submit">Login</button>
-            </a>
+            <button type="submit" value="submit" form="ad-form">Login</button>
         </form>
     </div>
 </div>
