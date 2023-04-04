@@ -25,10 +25,10 @@
             <div>
                 <ul>
                     <li>
-                        <button onclick="document.getElementById('staff_table').removeAttribute('hidden')" class="active">Staff</button>
+                        <button onclick="$('#staff_table').toggle()" class="active">Staff</button>
                     </li>
                     <li>
-                        <button onclick="document.getElementById('visitor_table').removeAttribute('hidden')">Visitor</button>
+                        <button onclick="$('#visitor_table').toggle()">Visitor</button>
                     </li>
                 </ul>
             </div>
@@ -50,24 +50,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for staff in staffs: %}
                 <tr>
-                    <th>29/mar/2023 21:19</th>
-                    <th>Panda Co</th>
-                    <th>0814433324</th>
-                    <th>Tech team</th>
+                    <th>{{ staff.actual_dtime }}</th>
+                    <th>{{ staff.name }}</th>
+                    <th>{{ staff.phone }}</th>
+                    <th>{{ staff.role_info }}</th>
                 </tr>
-                <tr>
-                    <th>29/mar/2023 21:19</th>
-                    <th>Panda Co</th>
-                    <th>0814433324</th>
-                    <th>Tech team</th>
-                </tr>
-                <tr>
-                    <th>29/mar/2023 21:19</th>
-                    <th>Panda Co</th>
-                    <th>0814433324</th>
-                    <th>Tech team</th>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
@@ -82,24 +72,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for visitor in visitors: %}
                 <tr>
-                    <th>29/mar/2023 21:19</th>
-                    <th>Panda</th>
-                    <th>0814433324</th>
-                    <th>Bussiness proposal</th>
+                    <th>{{ visitor.actual_dtime }}</th>
+                    <th>{{ visitor.name }}</th>
+                    <th>{{ visitor.phone }}</th>
+                    <th>{{ visitor.role_info }}</th>
                 </tr>
-                <tr>
-                    <th>29/mar/2023 21:19</th>
-                    <th>Panda</th>
-                    <th>0814433324</th>
-                    <th>Bussiness proposal</th>
-                </tr>
-                <tr>
-                    <th>29/mar/2023 21:19</th>
-                    <th>Panda</th>
-                    <th>0814433324</th>
-                    <th>Bussiness proposal</th>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
