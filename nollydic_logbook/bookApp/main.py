@@ -22,7 +22,8 @@ def home():
         phone = form.get("telNo")
 
         person = Person()
-        person.update(name=name, datetime=date, role=role, role_info=role_info, phone=phone)
+        person.update(name=name, actual_dtime=date, input_dtime=in_date, role=role, role_info=role_info, phone=phone)
+        person.save()
     return render_template("mainform.html")
 
 @app.route("/admin", methods=["GET"])

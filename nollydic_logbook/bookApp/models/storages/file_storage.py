@@ -8,9 +8,7 @@ from ..person import Person
 class FileStorage:
 
     __objects = {}
-    __filepath = datetime.now()
-    __filepath = str(__filepath.date())
-    __filepath = __filepath + ".json"
+    __filepath = f"{datetime.now().date()}.json"
 
     def add(self, obj):
         key = f"{obj.__class__.__name__}.{obj.id}"
@@ -42,7 +40,7 @@ class FileStorage:
         else:
             for key, value in json_data.items():
                 value = Person(**value)
-                self.__objects.update({key: value})
+                self.__objects[key] = value
 
     def all(self):
         objs = []
@@ -54,6 +52,6 @@ class FileStorage:
         objs = []
         for obj in self.__objects.values():
             tday = datetime.today()
-            if obj.datetime.date() == tday.date():
+            if obj.actual_dtime.date() == tday.date():
                 objs.append(obj)
         return objs

@@ -9,7 +9,8 @@ from datetime import datetime
 class Person:
 
     name = ""
-    datetime = None
+    actual_dtime = None
+    input_dtime = None
     role = ""
     role_info = ""
     phone = ""
@@ -23,7 +24,8 @@ class Person:
 
     def to_dict(self):
         attrs = self.__dict__.copy()
-        attrs["datetime"] = datetime.isoformat(attrs["datetime"])
+        attrs["actual_dtime"] = datetime.isoformat(attrs["actual_dtime"])
+        attrs["input_dtime"] = datetime.isoformat(attrs["input_dtime"])
         return attrs
 
     def update(self, **kwargs):
@@ -31,13 +33,17 @@ class Person:
             self.__dict__.update({'id': kwargs["id"]})
         if "name" in kwargs:
             self.__dict__.update({"name": kwargs["name"]})
-        if "datetime" in kwargs:
-            self.__dict__.update({"datetime": datetime.fromisoformat(kwargs["datetime"])})
+        if "actual_dtime" in kwargs:
+            self.__dict__.update({"actual_dtime": datetime.fromisoformat(kwargs["actual_dtime"])})
+        if "input_dtime" in kwargs:
+            self.__dict__.update({"input_dtime": datetime.fromisoformat(kwargs["input_dtime"])})
         if "role" in kwargs:
             self.__dict__.update({"role": kwargs["role"]})
-        if "department" in kwargs:
+        if "role_info" in kwargs:
             self.__dict__.update({"role_info": kwargs["role_info"]})
         if "phone" in kwargs:
             self.__dict__.update({"phone": kwargs["phone"]})
 
+    def save(self):
+        models.storage.load()
         models.storage.save()
