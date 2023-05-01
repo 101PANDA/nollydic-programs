@@ -9,6 +9,21 @@
   </head>
 
   <body>
+    <script>
+      function checkSelected()
+        var select_s = document.getElementById('department')
+        var select_v = document.getElementById('reason')
+
+        if (select_s.value != ""){
+          select_v.removeAttribute('required')
+        } else if (select_v.value != ""){
+          select_s.removeAttribute('required')
+        } else{
+          select_s.setAttribute('required')
+          select_v.setAttribute('required')
+        }
+    </script>
+
     <div class="wrapper">
       <a href="{{ url_for('auth') }}">
         <div class="image">
@@ -24,12 +39,12 @@
       <form class="form" action="{{ url_for('home')}}" method="post">
         <div class="input_field">
           <label>Full name</label>
-          <input type="text" name="fullName" placeholder="Enter your full name" class="input">
+          <input type="text" name="fullName" placeholder="Enter your full name" class="input" required>
         </div>
 
         <div class="input_field">
               <label>Date</label>
-                <input type="datetime-local" name="date" placeholder="dd/mm/yyyy" class="input">
+                <input type="datetime-local" name="date" placeholder="dd/mm/yyyy" class="input" required>
             </div>
             <p>
                   <div class="input_field">
@@ -50,7 +65,7 @@
               <div class="input_field">
                 <div class="custom_select" id="staff_department">
 
-                  <select name="department" id="department">
+                  <select name="department" id="department" onchange="checkSelected()" required>
                     <option value="" disabled selected hidden>Select department</option>
                     <option value="Administrative">Administrative</option>
                     <option value="Film Production">Film Production</option>
@@ -67,7 +82,7 @@
               </div>
               <div class="input_field">
                 <div class="custom_select" id="visitor_reason" hidden>
-                  <select name="reason" id="reason">
+                  <select name="reason" id="reason" onchange="checkSelected()" required>
                     <option value="" disabled selected hidden>Select reason for visit</option>
                     <option value="Contract Drafting">Contract draffting</option>
                     <option value="Information Finding">Information finding</option>
@@ -80,10 +95,27 @@
                   </select>
                 </div>
               </div>
+
+              <script type="text/javascript">
+                function checkSelected() {
+                  var select1 = document.getElementById('department');
+                  var select2 = document.getElementById('reason');
+              
+                  if (select1.value !== '') {
+                    select2.removeAttribute('required');
+                  } else if (select2.value !== '') {
+                    select1.removeAttribute('required');
+                  } else {
+                    select1.setAttribute('required', '');
+                    select2.setAttribute('required', '');
+                  }
+                }
+              </script>
+
             </p>
               <div class="input_field">
                   <label>Phone number</label>
-                  <input type="tel" name="telNo" placeholder="+234-----------" class="input">
+                  <input type="tel" name="telNo" placeholder="+234-----------" class="input" required>
               </div>
               <br>
               <div class="input_field">
@@ -91,6 +123,5 @@
               </div>
       </form>
     </div>
-
   </body>
 </html>

@@ -18,9 +18,24 @@
                 </div>
 
                 <div class="input_field">
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="Password">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password">
                 </div>
+                <div class="input_field">
+                    <label for="show-password">Show password</label>
+                    <input type="checkbox" id="show-password" onclick="showp_Function()">
+                </div>
+                <script type="text/javascript">
+                    function showp_Function() {
+                        var show = document.getElementById('password');
+                        if (show.type=='password') {
+                            show.type='text';
+                        }
+                        else {
+                            show.type='password';
+                        }
+                    }
+                </script>
                 {% if error %}
                 <p class="error">{{ error }}</p>
                 {% endif %}
